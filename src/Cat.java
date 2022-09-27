@@ -19,15 +19,29 @@ public class Cat {
 	// mouth starts about 40% from left edge of head
 	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2;
 	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3;
+	// ear will be about 1/5 from top of head and 1/5 from left
+	private static final int EAR_Y = HEAD_DIMENSION/3+10;
+	private static final int EAR_X = HEAD_DIMENSION/2 + 5;
+	private static final int EAR_SEPARATION = HEAD_DIMENSION/3 * 2;
+	// ear will be two times the size of mouth and height and width will be switched
+	private static final int EAR_HEIGHT = MOUTH_WIDTH*2;
+	private static final int EAR_WIDTH = MOUTH_HEIGHT*2;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-		int x=catX;
-		int y=catY;
+		// Draw the ears
+		g2.setColor(Color.black);
+		int x = EAR_X;
+		int y = EAR_Y;
+		g2.fillOval(x, y, EAR_WIDTH , EAR_HEIGHT);
+		x += EAR_SEPARATION;
+		g2.fillOval(x, y, EAR_WIDTH , EAR_HEIGHT);
 		// Draw the head
 		g2.setColor(Color.black);
+		x=catX;
+		y=catY;
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
 		// Draw the eyes
 		g2.setColor(Color.green);
@@ -41,10 +55,11 @@ public class Cat {
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
+		
 		g2.setColor(Color.black);
 		// Meow text appears below cat head, +20 places below 
 		// so it doesn't overlap the drawing and +35 places over
 		// so it is under the middle of the cat
-		g2.drawString("Meow", catX + 35, catY+HEAD_DIMENSION+20);	
+		g2.drawString("Meow", catX + 35, catY + HEAD_DIMENSION + 20);	
 	}
 }
