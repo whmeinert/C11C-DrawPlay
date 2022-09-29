@@ -25,7 +25,7 @@ public class Cat {
 	private static final int EAR_SEPARATION = HEAD_DIMENSION/3 * 2;
 	// ear will be two times the size of mouth and height and width will be switched
 	private static final int EAR_HEIGHT = MOUTH_WIDTH*2;
-	private static final int EAR_WIDTH = MOUTH_HEIGHT*2;
+	private static final int EAR_WIDTH = MOUTH_HEIGHT*7/3;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
