@@ -55,8 +55,10 @@ public class Cat {
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
+		g2.translate(catX, catY);
+		g2.rotate(3.141592/4);
+		g2.fillOval(0, 0, MOUTH_WIDTH/2, MOUTH_HEIGHT/2);
 		
-		g2.setColor(Color.black);
 		// Meow text appears below cat head, +20 places below 
 		// so it doesn't overlap the drawing and +35 places over
 		// so it is under the middle of the cat
