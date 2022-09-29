@@ -39,10 +39,15 @@ public class Cat {
 		x += EAR_SEPARATION;
 		g2.fillOval(x, y, EAR_WIDTH , EAR_HEIGHT);
 		// Draw the head
-		g2.setColor(Color.black);
+		g2.setColor(Color.white);
 		x=catX;
 		y=catY;
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
+		//draw spot on cat
+		g2.setColor(Color.orange);
+		x = catX + EYE_X - EYE_HEIGHT;
+		y = catY + EYE_Y - EYE_HEIGHT/2;
+		g2.fillOval(x, y, EYE_HEIGHT * 2, EYE_HEIGHT * 2);
 		// Draw the eyes
 		g2.setColor(Color.green);
 		x = catX + EYE_X; 
